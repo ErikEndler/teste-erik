@@ -1,0 +1,7 @@
+com.example.testeErik
+com.example.testeErik.config
+com.example.testeErik.controllers
+com.example.testeErik.controllers.dtos
+com.example.testeErik.domain
+com.example.testeErik.repository
+com.example.testeErik.services

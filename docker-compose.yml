@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  jsonserver:
+    build: 
+      context: .
+      dockerfile: ./TesteErikJsonServer/Dockerfile
+    image: jsonserver-teste
+    ports:
+      - "5000:5000"
+
+  spring-app:
+    build: 
+      context: .
+      dockerfile: ./TesteErikBackend/Dockerfile
+    image: backend-teste
+    ports:
+      - "8080:8080"
+    depends_on:
+      - jsonserver
+
+  vue-app:
+    build: 
+      context: .
+      dockerfile: ./TesteErikFrontend/Dockerfile
+    image: frontend-teste
+    ports:
+      - "5173:5173"
+    depends_on:
+      - spring-app    
